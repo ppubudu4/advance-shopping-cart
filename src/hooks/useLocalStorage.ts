@@ -15,7 +15,7 @@ function useLocalStorage<T>(key: string, initalValue: T | (() => T)) {
     localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
 
-  return [value, setValue];
+  return [value, setValue] as [typeof value, typeof setValue];
 }
 
 export default useLocalStorage;
