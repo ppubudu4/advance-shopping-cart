@@ -8,14 +8,14 @@ type StoreItemProps = {
   price: number;
   imgUrl: string;
 };
-const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
+function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
   const {
     getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
     removeFromCart,
   } = useShoppingCart();
-  const quantity: number = getItemQuantity(id);
+  const quantity = getItemQuantity(id);
   return (
     <Card className='h-100'>
       <Card.Img
@@ -59,6 +59,6 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
       </Card.Body>
     </Card>
   );
-};
+}
 
 export default StoreItem;
